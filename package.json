@@ -6,7 +6,10 @@
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "format": "prettier --write .",
+    "lint": "expo lint --fix --max-warnings=2",
+    "prepare": "husky"
   },
   "dependencies": {
     "expo": "~53.0.9",
@@ -16,7 +19,15 @@
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
     "@types/react": "~19.0.10",
+    "eslint": "^9.26.0",
+    "eslint-config-expo": "~9.2.0",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-prettier": "^5.4.0",
+    "husky": "^9.1.7",
+    "prettier": "^3.5.3",
     "typescript": "~5.8.3"
   },
   "private": true
