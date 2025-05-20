@@ -1,8 +1,8 @@
-import { Pressable, Text, View } from 'react-native';
-import { STRINGS } from '../shared/constants/strings';
 import { useTranslation } from 'react-i18next';
+import { Pressable, Text, View } from 'react-native';
+import { STRINGS } from '../../shared/constants/strings';
 
-const ApplicationNavigator = () => {
+const Home = () => {
   const { i18n } = useTranslation();
   return (
     <>
@@ -28,4 +28,4 @@ const ApplicationNavigator = () => {
     </>
   );
 };
-export default ApplicationNavigator;
+export default Home;
