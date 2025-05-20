@@ -4,16 +4,30 @@ import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import Home from '../screens/Home';
 import { RootStackParamList } from './types';
 import { ROUTES } from './constants';
+import { useAppSelector } from '../redux/store';
+import OnboardingScreen from '../screens/Onboarding';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 const RootNavigator = () => {
+  const userToken = useAppSelector(state => state.common.userToken);
   return (
     <SafeAreaProvider>
       <SafeAreaView style={{ flex: 1 }}>
         <NavigationContainer>
           <Stack.Navigator>
-            <Stack.Screen name={ROUTES.HOME} component={Home} />
+            {userToken ? (
+              <Stack.Group>
+                <Stack.Screen name={ROUTES.HOME} component={Home} />
+              </Stack.Group>
+            ) : (
+              <Stack.Group>
+                <Stack.Screen
+                  name={ROUTES.ONBOARDING}
+                  component={OnboardingScreen}
+                />
+              </Stack.Group>
+            )}
           </Stack.Navigator>
         </NavigationContainer>
       </SafeAreaView>
