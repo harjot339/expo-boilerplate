@@ -1,8 +1,10 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { THEME } from '../../theme/constants';
 
 const initialState = {
   userToken: undefined,
   userData: undefined,
+  theme: THEME.DEVICE,
 };
 
 const common = createSlice({
@@ -17,9 +19,12 @@ const common = createSlice({
       state.userData = undefined;
       state.userToken = undefined;
     },
+    setTheme(state, action: PayloadAction<THEME>) {
+      state.theme = action.payload;
+    },
   },
 });
 
-export const { loginUser, logoutUser } = common.actions;
+export const { loginUser, logoutUser, setTheme } = common.actions;
 
 export default common.reducer;
