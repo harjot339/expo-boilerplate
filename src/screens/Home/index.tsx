@@ -1,9 +1,11 @@
 import { useTranslation } from 'react-i18next';
 import { Pressable, Text, View } from 'react-native';
-import { STRINGS } from '../../shared/constants/strings';
-import { useAppDispatch } from '../../redux/store';
-import { logoutUser } from '../../redux/CommonReducer';
-import useStyles from '../../hooks/useStyles';
+
+import useStyles from '@hooks/useStyles';
+import { logoutUser } from '@redux/CommonReducer';
+import { useAppDispatch } from '@redux/store';
+import { STRINGS } from '@utils/strings';
+
 import styles from './styles';
 
 const Home = () => {

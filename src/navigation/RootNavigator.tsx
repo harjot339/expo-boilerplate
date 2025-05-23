@@ -1,11 +1,11 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
-import Home from '../screens/Home';
 import { RootStackParamList } from './types';
 import { ROUTES } from './constants';
-import { useAppSelector } from '../redux/store';
-import OnboardingScreen from '../screens/Onboarding';
+import { useAppSelector } from '@redux/store';
+import Home from '@screens/Home';
+import OnboardingScreen from '@screens/Onboarding';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 

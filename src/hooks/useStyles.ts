@@ -1,5 +1,6 @@
-import { ThemeColors } from '../theme/constants';
-import LayoutStyles from '../theme/Layout';
+import { ThemeColors } from '@theme/constants';
+
+import useLayoutStyles from './useLayoutStyles';
 import useTheme from './useTheme';
 
 const useStyles = <T extends (colors: ThemeColors) => ReturnType<T>>(
@@ -7,7 +8,7 @@ const useStyles = <T extends (colors: ThemeColors) => ReturnType<T>>(
 ) => {
   const { darkMode, Colors, currentTheme, changeTheme, toggleTheme } =
     useTheme();
-  const Layout = LayoutStyles({ Colors });
+  const Layout = useLayoutStyles();
   return {
     dynamicStyles: styleFunction(Colors),
     Colors,
