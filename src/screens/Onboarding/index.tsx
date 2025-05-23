@@ -1,7 +1,9 @@
-import { View, Text, Pressable } from 'react-native';
 import React from 'react';
-import { useAppDispatch } from '../../redux/store';
+
+import { View, Text, Pressable } from 'react-native';
+
 import { loginUser } from '../../redux/CommonReducer';
+import { useAppDispatch } from '../../redux/store';
 
 const OnboardingScreen = () => {
   const dispatch = useAppDispatch();

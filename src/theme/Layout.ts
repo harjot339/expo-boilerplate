@@ -1,4 +1,5 @@
 import { ColorValue, ImageStyle, TextStyle, ViewStyle } from 'react-native';
+
 import { ThemeColors } from './constants';
 
 export type Style = ViewStyle | TextStyle | ImageStyle;

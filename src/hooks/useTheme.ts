@@ -1,9 +1,10 @@
 import { useColorScheme } from 'react-native';
+
+import { setTheme } from '@redux/CommonReducer';
+import { useAppDispatch, useAppSelector } from '@redux/store';
 import { THEME, ThemeColors } from '@theme/constants';
 import { DarkColors } from '@theme/darkTheme';
 import { LightColors } from '@theme/lightTheme';
-import { useAppDispatch, useAppSelector } from '@redux/store';
-import { setTheme } from '@redux/CommonReducer';
 
 const useTheme = () => {
   let currentTheme: THEME = THEME.DEVICE;

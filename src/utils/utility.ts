@@ -1,5 +1,7 @@
 import { Platform } from 'react-native';
+
 import { FONT_WEIGHTS } from './constants';
+
 import { RFValue } from 'react-native-responsive-fontsize';
 
 /**

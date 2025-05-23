@@ -1,5 +1,6 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { THEME } from '@theme/constants';
+
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 const initialState = {
   userToken: undefined,

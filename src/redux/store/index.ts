@@ -1,9 +1,10 @@
-import { combineReducers, configureStore } from '@reduxjs/toolkit';
-import CommonReducer from '../CommonReducer';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import { persistReducer, persistStore } from 'redux-persist';
-import { useDispatch, useSelector } from 'react-redux';
 import ApiReducer from '../ApiReducer';
+import CommonReducer from '../CommonReducer';
+
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import { useDispatch, useSelector } from 'react-redux';
+import { persistReducer, persistStore } from 'redux-persist';
 
 const reducers = combineReducers({
   common: CommonReducer,

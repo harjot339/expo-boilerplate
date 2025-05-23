@@ -1,12 +1,13 @@
-import { useTranslation } from 'react-i18next';
 import { Pressable, Text, View } from 'react-native';
+
+import styles from './styles';
 
 import useStyles from '@hooks/useStyles';
 import { logoutUser } from '@redux/CommonReducer';
 import { useAppDispatch } from '@redux/store';
 import { STRINGS } from '@utils/strings';
 
-import styles from './styles';
+import { useTranslation } from 'react-i18next';
 
 const Home = () => {
   const { i18n } = useTranslation();
