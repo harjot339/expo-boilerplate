@@ -6,6 +6,14 @@ import { THEME, ThemeColors } from '@theme/constants';
 import { DarkColors } from '@theme/darkTheme';
 import { LightColors } from '@theme/lightTheme';
 
+/**
+ * Custom hook to manage and provide theme-related functionalities.
+ * It determines the current theme based on the device's color scheme or user preference,
+ * and provides functions to toggle or change the theme.
+ *
+ * @returns An object containing the current theme colors, dark mode status, current theme,
+ *          and functions to toggle or change the theme.
+ */
 const useTheme = () => {
   let currentTheme: THEME = THEME.DEVICE;
   let Colors: ThemeColors;

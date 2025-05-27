@@ -14,12 +14,15 @@ import { PersistGate } from 'redux-persist/integration/react';
 SplashScreen.preventAutoHideAsync();
 
 export default function App() {
+  // Preload images and fonts before rendering the app
+  // This ensures that the app is ready to display content without a loading screen
   useEffect(() => {
     (async () => {
       await Promise.all([preloadImages(), preloadFonts()]);
       SplashScreen.hideAsync();
     })();
   }, []);
+
   return (
     <Provider store={store}>
       <PersistGate persistor={persistor}>
