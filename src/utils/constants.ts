@@ -1,3 +1,5 @@
+import { loadAsync } from 'expo-font';
+
 export const FONT_WEIGHTS = {
   100: '100',
   200: '200',
@@ -9,3 +11,21 @@ export const FONT_WEIGHTS = {
   800: '800',
   900: '900', // Heaviest weight
 } as const;
+
+export const FONT = {
+  LIGHT: 'Signika-Negative-Light',
+  REGULAR: 'Signika-Negative-Regular',
+  MEDIUM: 'Signika-Negative-Medium',
+  SEMI_BOLD: 'Signika-Negative-SemiBold',
+  BOLD: 'Signika-Negative-Bold',
+};
+
+export const preloadFonts = async () => {
+  loadAsync({
+    [FONT.LIGHT]: require('@assets/fonts/SignikaNegative-Light.ttf'),
+    [FONT.REGULAR]: require('@assets/fonts/SignikaNegative-Regular.ttf'),
+    [FONT.MEDIUM]: require('@assets/fonts/SignikaNegative-Medium.ttf'),
+    [FONT.SEMI_BOLD]: require('@assets/fonts/SignikaNegative-SemiBold.ttf'),
+    [FONT.BOLD]: require('@assets/fonts/SignikaNegative-Bold.ttf'),
+  });
+};

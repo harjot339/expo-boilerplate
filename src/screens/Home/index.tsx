@@ -1,10 +1,13 @@
-import { Pressable, Text, View } from 'react-native';
+import { Image, Pressable, Text, View } from 'react-native';
 
 import styles from './styles';
 
+import useImages from '@hooks/useImages';
 import useStyles from '@hooks/useStyles';
 import { logoutUser } from '@redux/CommonReducer';
 import { useAppDispatch } from '@redux/store';
+import { FONT } from '@utils/constants';
+import { ICONS } from '@utils/icons';
 import { STRINGS } from '@utils/strings';
 
 import { useTranslation } from 'react-i18next';
@@ -16,12 +19,17 @@ const Home = () => {
     dispatch(logoutUser());
   };
   const { dynamicStyles, Layout, toggleTheme } = useStyles(styles);
+  const IMAGES = useImages();
   return (
     <>
       <View
         style={[Layout.flex, Layout.center, { borderWidth: 1, height: '100%' }]}
       >
-        <Text style={[dynamicStyles.button]}>{STRINGS.HI}</Text>
+        <Text style={[dynamicStyles.button, { fontFamily: FONT.BOLD }]}>
+          {STRINGS.HI}
+        </Text>
+        <Image source={IMAGES.MONEY} style={{ height: 100, width: 100 }} />
+        <ICONS.User width={500} height={50} color="red" />
         <Pressable
           onPress={() => {
             console.log(i18n.language);
