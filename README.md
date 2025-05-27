@@ -8,6 +8,7 @@ A production-ready Expo boilerplate built with best practices for scalable React
 - 🎨 Theming with light/dark support
 - 🧹 ESLint + Prettier for consistent code quality
 - 🐶 Husky + Commitlint for Git commit standards
+- 🖼️ Built-in support for SVGs, images, and custom fonts
 
 ---
 
