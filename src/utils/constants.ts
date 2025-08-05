@@ -1,5 +1,7 @@
 import { loadAsync } from 'expo-font';
 
+export const API_BASE_URL = process.env.EXPO_PUBLIC_API_BASE_URL || '';
+
 export const FONT_WEIGHTS = {
   100: '100',
   200: '200',

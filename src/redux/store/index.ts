@@ -1,5 +1,5 @@
-import ApiReducer from '../ApiReducer';
 import CommonReducer from '../CommonReducer';
+import api from './api';
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
@@ -8,7 +8,7 @@ import { persistReducer, persistStore } from 'redux-persist';
 
 const reducers = combineReducers({
   common: CommonReducer,
-  [ApiReducer.reducerPath]: ApiReducer.reducer,
+  [api.reducerPath]: api.reducer,
 });
 
 const persistConfig = {
@@ -25,11 +25,11 @@ const store = configureStore({
     getDefaultMiddleware({
       immutableCheck: false,
       serializableCheck: false,
-    }).concat(ApiReducer.middleware),
+    }).concat(api.middleware),
 });
 export const persistor = persistStore(store);
-type RootState = ReturnType<typeof store.getState>;
-type AppDispatch = typeof store.dispatch;
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
 
 export const useAppDispatch = useDispatch.withTypes<AppDispatch>();
 export const useAppSelector = useSelector.withTypes<RootState>();

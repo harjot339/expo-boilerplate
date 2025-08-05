@@ -1,11 +1,8 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query';
+import api from '@redux/store/api';
 
-const ApiReducer = createApi({
-  reducerPath: 'api',
-  baseQuery: fetchBaseQuery({ baseUrl: '' }),
+const authApi = api.injectEndpoints({
   endpoints: builder => ({}),
+  overrideExisting: false,
 });
 
-export default ApiReducer;
-
-export const {} = ApiReducer;
+export const {} = authApi;
