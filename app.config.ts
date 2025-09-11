@@ -14,7 +14,7 @@ const config: ExpoConfig = {
   version: packageJson.version,
   orientation: 'portrait',
   icon: './assets/icon.png',
-  userInterfaceStyle: 'light',
+  userInterfaceStyle: 'automatic',
   newArchEnabled: true,
   splash: {
     image: './assets/splash-icon.png',
@@ -30,7 +30,6 @@ const config: ExpoConfig = {
       foregroundImage: './assets/adaptive-icon.png',
       backgroundColor: '#ffffff',
     },
-    edgeToEdgeEnabled: true,
     package: BUNDLE_IDENTIFIER,
   },
   extra: {
@@ -39,7 +38,15 @@ const config: ExpoConfig = {
   runtimeVersion: {
     policy: 'sdkVersion',
   },
+  experiments: { reactCompiler: true },
   plugins: [
+    [
+      'expo-dev-client',
+      {
+        launchMode: 'most-recent',
+      },
+    ],
+    'expo-asset',
     [
       'expo-font',
       {
