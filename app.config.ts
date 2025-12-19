@@ -46,6 +46,9 @@ const config: ExpoConfig = {
         launchMode: 'most-recent',
       },
     ],
+    'expo-build-properties',
+    'expo-asset',
+    'expo-font',
   ],
 };
 
