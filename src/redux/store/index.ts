@@ -26,6 +26,9 @@ const store = configureStore({
       immutableCheck: false,
       serializableCheck: false,
     }).concat(api.middleware),
+  devTools: false,
+  enhancers: (getDefaultEnhancers) =>
+    getDefaultEnhancers().concat(devToolsEnhancer()),
 });
 export const persistor = persistStore(store);
 export type RootState = ReturnType<typeof store.getState>;

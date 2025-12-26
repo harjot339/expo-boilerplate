@@ -12,10 +12,13 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 const RootNavigator = () => {
+  const navigationRef = useNavigationContainerRef();
+  useReactNavigationDevTools(navigationRef);
+
   const userToken = useAppSelector(state => state.common.userToken);
   return (
     <SafeAreaProvider>
-      <NavigationContainer>
+      <NavigationContainer ref={navigationRef}>
         <Stack.Navigator>
           {userToken ? (
             <Stack.Group>
