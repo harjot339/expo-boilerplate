@@ -5,6 +5,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { useDispatch, useSelector } from 'react-redux';
 import { persistReducer, persistStore } from 'redux-persist';
+import devToolsEnhancer from 'redux-devtools-expo-dev-plugin';
 
 const reducers = combineReducers({
   common: CommonReducer,
@@ -27,7 +28,7 @@ const store = configureStore({
       serializableCheck: false,
     }).concat(api.middleware),
   devTools: false,
-  enhancers: (getDefaultEnhancers) =>
+  enhancers: getDefaultEnhancers =>
     getDefaultEnhancers().concat(devToolsEnhancer()),
 });
 export const persistor = persistStore(store);

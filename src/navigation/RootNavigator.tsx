@@ -5,9 +5,13 @@ import OnboardingScreen from '@screens/Onboarding';
 import { ROUTES } from './constants';
 import { RootStackParamList } from './types';
 
-import { NavigationContainer } from '@react-navigation/native';
+import {
+  NavigationContainer,
+  useNavigationContainerRef,
+} from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { useReactNavigationDevTools } from '@dev-plugins/react-navigation';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
