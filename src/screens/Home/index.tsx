@@ -4,6 +4,7 @@ import styles from './styles';
 
 import useImages from '@hooks/useImages';
 import useStyles from '@hooks/useStyles';
+import ScreenWrapper from '@components/ScreenWrapper';
 import { logoutUser } from '@redux/CommonReducer';
 import { useAppDispatch } from '@redux/store';
 import { FONT } from '@utils/constants';
@@ -21,7 +22,7 @@ const Home = () => {
   const { dynamicStyles, Layout, toggleTheme } = useStyles(styles);
   const IMAGES = useImages();
   return (
-    <>
+    <ScreenWrapper headerProps={{ title: 'Home', showBack: false }}>
       <View
         style={[Layout.flex, Layout.center, { borderWidth: 1, height: '100%' }]}
       >
@@ -45,7 +46,7 @@ const Home = () => {
           <Text>Logout</Text>
         </Pressable>
       </View>
-    </>
+    </ScreenWrapper>
   );
 };
 export default Home;

@@ -1,4 +1,6 @@
 export enum ROUTES {
-  HOME = 'Home',
-  ONBOARDING = 'Onboarding',
+  LOGIN = 'Login',
+  SIGNUP = 'Signup',
+  FORGOT_PASSWORD = 'ForgotPassword',
+  MAIN_TABS = 'MainTabs',
 }

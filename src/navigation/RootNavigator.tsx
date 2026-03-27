@@ -1,8 +1,10 @@
 import { useAppSelector } from '@redux/store';
-import Home from '@screens/Home';
-import OnboardingScreen from '@screens/Onboarding';
+import ForgotPasswordScreen from '@screens/ForgotPassword';
+import LoginScreen from '@screens/Login';
+import SignupScreen from '@screens/Signup';
 
 import { ROUTES } from './constants';
+import MainTabs from './MainTabs';
 import { RootStackParamList } from './types';
 
 import {
@@ -23,16 +25,18 @@ const RootNavigator = () => {
   return (
     <SafeAreaProvider>
       <NavigationContainer ref={navigationRef}>
-        <Stack.Navigator>
+        <Stack.Navigator screenOptions={{ headerShown: false }}>
           {userToken ? (
             <Stack.Group>
-              <Stack.Screen name={ROUTES.HOME} component={Home} />
+              <Stack.Screen name={ROUTES.MAIN_TABS} component={MainTabs} />
             </Stack.Group>
           ) : (
             <Stack.Group>
+              <Stack.Screen name={ROUTES.LOGIN} component={LoginScreen} />
+              <Stack.Screen name={ROUTES.SIGNUP} component={SignupScreen} />
               <Stack.Screen
-                name={ROUTES.ONBOARDING}
-                component={OnboardingScreen}
+                name={ROUTES.FORGOT_PASSWORD}
+                component={ForgotPasswordScreen}
               />
             </Stack.Group>
           )}
